@@ -20,7 +20,7 @@ for i in files:
                         fn2 = j
                         fastp_cmd = "fastp -w 16 -q 30 -i "+ \
                                     fn1.rstrip()+" -I "+fn2.rstrip()+ \
-                                    " -o "+ outdir + str('_'.join(fn1.split("-")[:-2])).rstrip()+ \
+                                    " -o "+ outdir + str('_'.join(fn1.split("_")[:-2])).rstrip()+ \
                                     "_QC_R1.fq.gz "+ \
                                     " -O "+ outdir + str('_'.join(fn2.split("_")[:-2])).rstrip()+ \
                                     "_QC_R2.fq.gz "

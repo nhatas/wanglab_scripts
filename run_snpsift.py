@@ -16,3 +16,5 @@ for i in files:
                      f" > {fn}.snpsift.txt"
         print(snpsift_cmd)
         os.system(snpsift_cmd)
+        
+       # testing github pulling

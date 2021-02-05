@@ -1,4 +1,6 @@
-#!conda install -c anaconda openpyxl -y
+#!conda install -c anaconda openpyxl -y # this line is for jupyter notebooks to install openpyxl
+
+# to install openpyxl to your conda environment: conda install -c anaconda openpyxl -y
 
 import os
 import pandas as pd

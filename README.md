@@ -6,6 +6,9 @@
 ## run_bbmap.py
 ### Align sequencing data (usually QC'd first) to a reference genome (set to SARS-CoV-2 Wuhan reference) using BBMap. Run script in the same directory as the QC'd sequencing files. Set `ref` to the reference genome you wish to align to. Currently the script is set to output mapped reads using the `outm` BBMap parameter. To output both mapped and unmapped reads, change `outm` to `out`. Output located in a parent directory `/alignment_data/`.
 
+## run_bwa.py
+### Align sequencing data (usually QC'd first) to a reference genome (set to SARS-CoV-2 Wuhan reference) using BWA MEM. Run script in the same directory as the QC'd sequencing files. Set `ref` to the reference genome you wish to align to. Sorted output located in a parent directory `/alignment_data/`.
+
 ## sort_bams.py
 ### Sort bam files with samtools. Run the script in the same directory as the BAM files you want to sort. Filenames will have extensions removed and `_sorted.bam` appended in the same directory as the script. 
 
@@ -23,3 +26,7 @@
 
 ## run_snpsift.py
 ### Requires SNPEff annotated VCF files. Modify the `fields` variable to designate the fields you wish to extract from the annotated VCF files. Parsed annotated VCF files will have `.snpsift.txt` appended to them. 
+
+## Create snpsift_vcf_to_excel.py
+### Converts SNPSift extracted file to Excel document with each VCF file result as its own sheet. Currently set to work with DeepVariant output. `df.columns` fields will have to be changed if different SNP caller was used to generate VCF file. Variant allele frequency (VAF) minimum threshold can be edited by modifying `df = df[df.VAF >= 0.5]` to `df = df[df.VAF >= 0.25]` if interested in variants with at least 25% allele frequency. Note, current version of DeepVariant (1.1.0) detects SNPs down to 12%.
+
